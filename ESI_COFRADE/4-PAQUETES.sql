@@ -30,6 +30,11 @@ CREATE OR REPLACE PACKAGE PaqueteHermandad AS
     -- RETURN NUMBER;
 END PaqueteHermandad;
 /
+CREATE OR REPLACE PACKAGE PaqueteFuncionesHermandad AS
+    FUNCTION ContarHermanos(p_hermandad IN VARCHAR2)
+    RETURN NUMBER;
+END PaqueteFuncionesHermandad;
+/
 -- Paquete de proc/func relacionado con objetos Hermandad
 CREATE OR REPLACE PACKAGE BODY PaqueteHermandad AS
     -- Insertar una hermandad
@@ -162,16 +167,21 @@ CREATE OR REPLACE PACKAGE BODY PaqueteHermandad AS
             WHEN NO_DATA_FOUND THEN -- Si no encuentra datos a procesar
                 DBMS_OUTPUT.PUT_LINE('No hay datos para procesar');
     END InsertarCuriosidad;
-    -- FUNCTION ContarHermanos(p_hermandad IN VARCHAR2) RETURN NUMBER
-    -- AS
-    --     v_hermandad_ref REF hermandad_objtyp;
-    --     v_hermandad_obj hermandad_objtyp;   
-    -- BEGIN
-    --     SELECT REF(h) INTO v_hermandad_ref
-    --     FROM HERMANDADES h
-    --     WHERE h.nombre = p_hermandad;
-    --     SELECT DEREF(v_hermandad_ref) INTO v_hermandad_obj FROM DUAL;
-    --     RETURN v_hermandad_obj.lista_hermanos.COUNT;
-    -- END ContarHermanos;
 END PaqueteHermandad;
+/
+-- Paquete de proc/func relacionado con objetos Hermandad
+CREATE OR REPLACE PACKAGE BODY PaqueteFuncionesHermandad AS
+    FUNCTION ContarHermanos(p_hermandad IN VARCHAR2) RETURN NUMBER
+    AS
+        v_hermandad_ref REF hermandad_objtyp;
+        v_hermandad_obj hermandad_objtyp;   
+    BEGIN
+        SELECT REF(h) INTO v_hermandad_ref
+        FROM HERMANDADES h
+        WHERE h.nombre = p_hermandad;
+        SELECT DEREF(v_hermandad_ref) INTO v_hermandad_obj FROM DUAL;
+        RETURN v_hermandad_obj.lista_hermanos.COUNT;
+    END ContarHermanos;
+END PaqueteFuncionesHermandad;
+
 /
