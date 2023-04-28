@@ -29,11 +29,11 @@
 
 
 <audio autoplay>
-  <source src="/music/marcha1.mp3" type="audio/mpeg">
+  <source src="music/marcha1.mp3" type="audio/mpeg">
   tu navegador no es compatible con este audio
 </audio>
 
-<h1><img class="logo" src="/img/logo.jpg" alt="logo de mi web">
+<h1><img class="logo" src="img/logo.jpg" alt="logo de mi web">
         <p>ESI COFRADE
         <p>
 </h1>
