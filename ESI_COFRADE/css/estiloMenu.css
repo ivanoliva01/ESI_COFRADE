@@ -16,6 +16,13 @@ h1 p{
     margin-left: 20px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+h4{
+    margin-left: 70px;
+}
+h5{
+    margin-left: 70px;
+    margin-top: 70px;
+}
 nav{
     background-color:#ab65a6;
     color: #FFF;
@@ -52,6 +59,14 @@ nav{
 
 .hermandades_municipio{
     background-image: url("../img/fondo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    font-family: verdana;
+    height: 100vh;
+}
+.hermandad{
+    background-image: url("../img/fondo3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -118,9 +133,9 @@ ul.menu ul, ul.submenu ul{
  
 ul.menu > li:hover > ul, ul.submenu > li:hover > ul{
     height:50%;
-    overflow:visible;
- 
+    overflow:visible; 
 }
+
 
 .menu li a {
     text-decoration: none;
@@ -134,4 +149,17 @@ ul.menu > li:hover > ul, ul.submenu > li:hover > ul{
   
   .menu li a:hover {
     color: #c45bde;
+  }
+
+table {
+    padding: auto;
+    margin-left: 50px;
+    border-collapse: collapse;
+    background: #cf99ce;
+    margin-top: 70px;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
   }
